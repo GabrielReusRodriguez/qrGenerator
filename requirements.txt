@@ -1,0 +1,12 @@
+# QR Generator Dependencies
+# Core dependencies for QR code generation
+
+pyqrcode>=1.2.1
+pypng>=0.2.0
+
+# CLI and development
+argparse>=1.4.0
+
+# Testing (optional)
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
