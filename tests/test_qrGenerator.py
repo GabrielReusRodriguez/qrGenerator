@@ -3,6 +3,7 @@ Tests for QR Generator
 """
 
 import os
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -20,9 +21,7 @@ class TestValidateOutputPath(unittest.TestCase):
         self.temp_dir = tempfile.mkdtemp()
     
     def tearDown(self):
-        for file in os.listdir(self.temp_dir):
-            os.remove(os.path.join(self.temp_dir, file))
-        os.rmdir(self.temp_dir)
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
     
     def test_adds_png_extension(self):
         """Test that .png extension is added when not specified"""
@@ -53,9 +52,7 @@ class TestGenerateQRCode(unittest.TestCase):
         self.temp_dir = tempfile.mkdtemp()
     
     def tearDown(self):
-        for file in os.listdir(self.temp_dir):
-            os.remove(os.path.join(self.temp_dir, file))
-        os.rmdir(self.temp_dir)
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
     
     def test_generates_png_file(self):
         """Test that a PNG file is generated"""
@@ -101,9 +98,7 @@ class TestIntegration(unittest.TestCase):
         self.temp_dir = tempfile.mkdtemp()
     
     def tearDown(self):
-        for file in os.listdir(self.temp_dir):
-            os.remove(os.path.join(self.temp_dir, file))
-        os.rmdir(self.temp_dir)
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
     
     def test_full_workflow(self):
         """Test the full workflow: validate path and generate QR"""
