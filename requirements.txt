@@ -2,7 +2,7 @@
 # Core dependencies for QR code generation
 
 pyqrcode>=1.2.1
-pypng>=0.2.0
+pypng>=0.20220715.0
 
 # CLI and development
 argparse>=1.4.0
