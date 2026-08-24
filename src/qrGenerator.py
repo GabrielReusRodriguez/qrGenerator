@@ -12,6 +12,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from typing import List, Optional
 
 import pyqrcode
 
@@ -62,7 +63,7 @@ def validate_output_path(output_path: str) -> str:
     return str(path)
 
 
-def main(argv: list[str] | None = None) -> None:
+def main(argv: Optional[List[str]] = None) -> None:
     """
     Main entry point for the QR generator CLI.
     
